@@ -1,4 +1,4 @@
-import placeholder from "../../public/placeholder.png";
+import placeholder from "../placeholder.png";
 
 type TicketBriefProps = {
   title: string;

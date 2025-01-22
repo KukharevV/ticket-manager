@@ -1,6 +1,6 @@
 import { UserSelector } from "../ui/user-selector";
 import Search from "../ui/search";
-import { useLocation, useSearchParams } from "react-router";
+import { useSearchParams } from "react-router";
 import { userOptions, UserType } from "../types/definitions";
 
 import { useDebouncedCallback } from "use-debounce";
@@ -14,13 +14,6 @@ export default function TicketsPage() {
 
   const isExistingOption = userOptions.includes(userType as UserType);
   const defaultUserOption = (isExistingOption ? userType : "local") as UserType;
-
-  const handlePageChange = (newPage: number) => {
-    setSearchParams({
-      page: newPage.toString(),
-      search,
-    });
-  };
 
   const createPageURL = (pageNumber: number | string) => {
     const params = new URLSearchParams(searchParams);
@@ -41,8 +34,6 @@ export default function TicketsPage() {
 
     setSearchParams(params);
   }, 300);
-
-  console.log(userType, "User");
 
   return (
     <div className="w-full">

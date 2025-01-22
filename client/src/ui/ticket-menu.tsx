@@ -35,7 +35,7 @@ export function TicketMenu({
   const { data: tickets, meta } = data!;
 
   return (
-    <div>
+    <div className="flex flex-col justify-start items-center">
       <TicketList userType={userType} tickets={tickets} />
       <Pagination
         currentPage={page}

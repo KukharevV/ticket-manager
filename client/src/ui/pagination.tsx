@@ -16,9 +16,6 @@ export default function Pagination({
 }: PaginationProps) {
   const allPages = generatePagination(currentPage, totalPages);
 
-  console.log("meta", totalPages);
-  console.log("allPages", allPages);
-
   return (
     <>
       <div className="inline-flex">

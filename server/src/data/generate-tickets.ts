@@ -24,12 +24,9 @@ export function generateTickets(count: number = 100): Ticket[] {
 const OUTPUT_FOLDER = resolve(__dirname, "../data");
 const OUTPUT_FILE = "tickets.json";
 
-// Generate tickets
-const tickets: Ticket[] = generateTickets(100); // Generate 100 tickets
+const tickets: Ticket[] = generateTickets(100);
 
-// Ensure folder and write file
 try {
-  // Create the folder if it doesn't exist (in Node.js 10+)
   writeFileSync(
     resolve(OUTPUT_FOLDER, OUTPUT_FILE),
     JSON.stringify(tickets, null, 2),
